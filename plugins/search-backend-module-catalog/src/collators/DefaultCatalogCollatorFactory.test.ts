@@ -84,6 +84,7 @@ describe('DefaultCatalogCollatorFactory', () => {
 
       expect(documents[0]).toEqual({
         title: expectedEntities[0].metadata.name,
+        name: expectedEntities[0].metadata.name,
         location: '/catalog/default/component/test-entity',
         text: expectedEntities[0].metadata.description,
         namespace: 'default',
@@ -98,6 +99,7 @@ describe('DefaultCatalogCollatorFactory', () => {
       });
       expect(documents[1]).toEqual({
         title: expectedEntities[1].metadata.title,
+        name: expectedEntities[1].metadata.name,
         location: '/catalog/default/component/test-entity-2',
         text: expectedEntities[1].metadata.description,
         namespace: 'default',
@@ -120,6 +122,7 @@ describe('DefaultCatalogCollatorFactory', () => {
           title: `custom-title-${
             entity.metadata.title ?? entity.metadata.name
           }`,
+          name: entity.metadata.name,
           namespace: 'custom/namespace',
           text: 'custom-text',
           type: 'custom-type',
@@ -140,6 +143,7 @@ describe('DefaultCatalogCollatorFactory', () => {
 
       expect(documents[0]).toEqual({
         title: 'custom-title-test-entity',
+        name: 'test-entity',
         location: '/catalog/default/component/test-entity',
         text: 'custom-text',
         namespace: 'custom/namespace',
@@ -154,6 +158,7 @@ describe('DefaultCatalogCollatorFactory', () => {
       });
       expect(documents[1]).toEqual({
         title: 'custom-title-Test Entity',
+        name: 'test-entity-2',
         location: '/catalog/default/component/test-entity-2',
         text: 'custom-text',
         namespace: 'custom/namespace',

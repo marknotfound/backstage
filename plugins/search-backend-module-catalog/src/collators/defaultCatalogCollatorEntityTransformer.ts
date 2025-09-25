@@ -50,5 +50,6 @@ export const defaultCatalogCollatorEntityTransformer: CatalogCollatorEntityTrans
       kind: entity.kind,
       lifecycle: (entity.spec?.lifecycle as string) || '',
       owner: (entity.spec?.owner as string) || '',
+      name: entity.metadata.name,
     };
   };
